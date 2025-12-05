@@ -1,8 +1,8 @@
 
-from fastapi import FastAPI, HTTPException
-from fastapi.middleware.cors import CORSMiddleware
+from fastapi import FastAPI, HTTPException # pyright: ignore[reportMissingImports]
+from fastapi.middleware.cors import CORSMiddleware # pyright: ignore[reportMissingImports]
 from typing import List
-from .models import Product, ProductCreate, ProductUpdate
+from .models import Product, ProductCreate, ProductUpdate # pyright: ignore[reportMissingImports]
 from .data import db, next_id
 
 app = FastAPI(
@@ -14,7 +14,7 @@ app = FastAPI(
 # CORS para pruebas
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Ajusta en producción
+    allow_origins=["*"],  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
