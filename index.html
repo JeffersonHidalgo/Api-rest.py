@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumir API FastAPI</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        input, button { margin: 5px; padding: 8px; }
+        .product { border: 1px solid #ccc; padding: 10px; margin: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Productos</h1>
+    <div>
+        <input type="text" id="name" placeholder="Nombre">
+        <input type="number" id="price" placeholder="Precio">
+        <label><input type="checkbox" id="in_stock" checked> En stock</label>
+        <button onclick="addProduct()">Agregar Producto</button>
+           // Mostrar productos
+        async function loadProducts() {
+            const res = await fetch(API_URL);
+            const products = await res.json();
+            const container = document.getElementById("product-list");
+            container.innerHTML = "";
+            products.forEach(p => {
+                container.innerHTML += `
+                    <div class="product">
+                        <strong>${p.name}</strong> - $${p.price} 
+                        [${p.in_stock ? "Disponible" : "Agotado"}]
+                    </div>
+                `;
+            });
+        }
+
+        // Agregar producto
+        async function addProduct() {
+            const name = document.getElementById("name").value;
+            const price = parseFloat(document.getElementById("price").value);
+            const in_stock = document.getElementById("in_stock").checked;
+
+            const res = await fetch(API_URL, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ name, price, in_stock })
+            });
+
+            if (res.ok) {
+                alert("Producto agregado");
+                loadProducts();
+            } else {
+                alert("Error al agregar producto");
+            }
+        }
+
+        // Cargar productos al inicio
+        loadProducts();
+    </script>
+</body>
+</html>
