@@ -1,0 +1,10 @@
+
+body {
+    font-family: Arial, sans-serif;
+}
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #fff;
+}
