@@ -1,7 +1,7 @@
 
 const API_URL = "http://127.0.0.1:8000/products";
 
-// Cargar productos
+
 async function loadProducts() {
     const res = await fetch(API_URL);
     const products = await res.json();
@@ -22,7 +22,7 @@ async function loadProducts() {
     });
 }
 
-// Agregar producto y mostrar ID
+// Add producto y  ID
 async function addProduct() {
     const name = document.getElementById("name").value;
     const price = parseFloat(document.getElementById("price").value);
@@ -51,7 +51,7 @@ async function addProduct() {
     }
 }
 
-// Eliminar producto con SweetAlert2
+// Eliminar product SweetAlert2
 async function deleteProduct(id) {
     Swal.fire({
         title: "¿Eliminar producto?",
@@ -75,5 +75,5 @@ async function deleteProduct(id) {
     });
 }
 
-// Inicializar
+
 loadProducts();

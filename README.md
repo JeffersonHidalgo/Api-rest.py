@@ -1,5 +1,5 @@
 
-# Mini REST API de Productos (FastAPI)
+# REST API de Productos(FastAPI)
 
 
 
@@ -16,6 +16,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
+# Tambien puedes usar el archivo (setup_and_run_api.bat)
 
 - Abre **http://127.0.0.1:8000/docs** para probar la API (Swagger UI).
 - Esquema OpenAPI en **/openapi.json**.

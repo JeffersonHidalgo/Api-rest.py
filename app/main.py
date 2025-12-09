@@ -10,10 +10,10 @@ app = FastAPI(
     description="API CRUD simple para  GitHub."
 )
 
-# CORS para pruebas
+# Cors
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Ajusta en producción
+    allow_origins=["*"],  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
