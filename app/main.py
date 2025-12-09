@@ -43,6 +43,13 @@ def create_product(payload: ProductCreate):
     db[new_id] = product
     return product
 
+@app.post("/products", response_model=Product, status_code=201, tags=["products"])
+def create_product(payload: ProductCreate):
+    new_id = next_id()
+    product = Product(id=new_id, **payload.model_dump())
+    db[new_id] = product
+    return product
+    
 @app.put("/products/{product_id}", response_model=Product, tags=["products"])
 def update_product(product_id: int, payload: ProductUpdate):
     existing = db.get(product_id)

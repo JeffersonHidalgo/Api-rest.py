@@ -1,7 +1,7 @@
 
 # Mini REST API de Productos (FastAPI)
 
-API CRUD
+
 
 ## 🚀 Tecnologías
 - FastAPI (docs automáticas)
@@ -40,9 +40,17 @@ curl -X POST http://127.0.0.1:8000/products   -H "Content-Type: application/json
 curl -X PUT http://127.0.0.1:8000/products/3 -H "Content-Type: application/json" -d '{"price":130.0}'
 curl -X DELETE http://127.0.0.1:8000/products/3
 ```
+<p><h3>Inicio</></p>
+<img src="./img/1.png" alt="home" position="center" class="mx-auto d-block mb-4" style="width: 250px; height: 250px;">
+
+<p><h3>Agregar Producto</></p>
+<img src="./img/2.png" alt="home" position="center" class="mx-auto d-block mb-4" style="width: 250px; height: 250px;">
+<p><h3>Eliminar</></p>
+<img src="./img/4.png" alt="home" position="center" class="mx-auto d-block mb-4" style="width: 250px; height: 250px;">
+
 
 ## 📦 Nota
-Esta API usa almacenamiento en memoria. Si reinicias, los datos se pierden.
+Esta API usa almacenamiento en memoria (Por el momento). Si reinicias, los datos se pierden.
 
 🧱 Estructura del proyecto
 rest-api-mini/

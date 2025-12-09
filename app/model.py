@@ -6,13 +6,16 @@ class Product(BaseModel):
     name: str = Field(..., min_length=2, description="Nombre del producto")
     price: float = Field(..., ge=0, description="Precio del producto")
     in_stock: bool = Field(default=True, description="Disponibilidad")
+    storage: float = Field(default=0, description="Cantidad")
 
 class ProductCreate(BaseModel):
     name: str = Field(..., min_length=2)
     price: float = Field(..., ge=0)
     in_stock: bool = True
+    storage: bool = True
 
 class ProductUpdate(BaseModel):
     name: Optional[str] = Field(None, min_length=2)
     price: Optional[float] = Field(None, ge=0)
     in_stock: Optional[bool] = None
+    storage: Optional[bool] = None
