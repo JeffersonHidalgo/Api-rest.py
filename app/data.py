@@ -1,6 +1,6 @@
 #(resetea al reiniciar)
 from typing import Dict
-from .models import Product # pyright: ignore[reportMissingImports]
+from .model import Product # pyright: ignore[reportMissingImports]
 
 db: Dict[int, Product] = {}
 
