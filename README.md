@@ -41,12 +41,13 @@ curl -X PUT http://127.0.0.1:8000/products/3 -H "Content-Type: application/json"
 curl -X DELETE http://127.0.0.1:8000/products/3
 ```
 <p><h3>Inicio</></p>
-<img src="./img/1.png" alt="home" position="center" class="mx-auto d-block mb-4" style="width: 250px; height: 250px;">
+<img src="./img/1.png" alt="home" position="center" class="mx-auto d-block mb-4" style="width: 350px; height: 250px;">
 
 <p><h3>Agregar Producto</></p>
-<img src="./img/2.png" alt="home" position="center" class="mx-auto d-block mb-4" style="width: 250px; height: 250px;">
+<img src="./img/2.png" alt="home" position="center" class="mx-auto d-block mb-4" style="width: 350px; height: 250px;">
+
 <p><h3>Eliminar</></p>
-<img src="./img/4.png" alt="home" position="center" class="mx-auto d-block mb-4" style="width: 250px; height: 250px;">
+<img src="./img/4.png" alt="home" position="center" class="mx-auto d-block mb-4" style="width: 350px; height: 250px;">
 
 
 ## 📦 Nota
