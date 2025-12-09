@@ -1,12 +1,18 @@
-
+from pydantic import BaseModel, Field
 from typing import Optional
-from sqlmodel import SQLModel, Field # pyright: ignore[reportMissingImports]
-from datetime import datetime
 
-class Product(SQLModel, table=True):
-    id: Optional[int] = Field(default=None, primary_key=True)
-    name: str
-    price: float
+class Product(BaseModel):
+    id: int = Field(..., description="Identificador único del producto")
+    name: str = Field(..., min_length=2, description="Nombre del producto")
+    price: float = Field(..., ge=0, description="Precio del producto")
+    in_stock: bool = Field(default=True, description="Disponibilidad")
+
+class ProductCreate(BaseModel):
+    name: str = Field(..., min_length=2)
+    price: float = Field(..., ge=0)
     in_stock: bool = True
-    created_at: datetime = Field(default_factory=datetime.utcnow)
-    updated_at: datetime = Field(default_factory=datetime.utcnow)
+
+class ProductUpdate(BaseModel):
+    name: Optional[str] = Field(None, min_length=2)
+    price: Optional[float] = Field(None, ge=0)
+    in_stock: Optional[bool] = None
