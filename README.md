@@ -44,12 +44,17 @@ curl -X DELETE http://127.0.0.1:8000/products/3
 <p><h3>Inicio</></p>
 <img src="./img/1.png" alt="home" position="center" class="mx-auto d-block mb-4" style="width: 400px; height: 250px;">
 
-<p><h3>Agregar Producto</></p>
+### Inicio
+<img src="./img/1.png" alt="home" position="center" class="mx-auto d-block mb-4" style="width: 400px; height: 250px;">
+
+### Agregar Producto
 <img src="./img/2.png" alt="home" position="center" class="mx-auto d-block mb-4" style="width: 400px; height: 250px;">
 
-<p><h3>Eliminar</></p>
+### Eliminar
 <img src="./img/4.png" alt="home" position="center" class="mx-auto d-block mb-4" style="width: 400px; height: 250px;">
 
+### API
+<img src="./img/api.png" alt="home" position="center" class="mx-auto d-block mb-4" style="width: 400px; height: 250px;">
 
 ## 📦 Nota
 Esta API usa almacenamiento en memoria (Por el momento). Si reinicias, los datos se pierden.
